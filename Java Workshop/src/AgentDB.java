@@ -40,7 +40,7 @@ public class AgentDB {
 		
 		Vector<String> agents = new Vector<String>();
 		try {
-			rs = stmt.executeQuery("SELECT agentid,agtFirstName,agtLastName FROM agents");
+			rs = stmt.executeQuery("SELECT agentid,agtFirstName,agtLastName FROM agents ORDER BY agentid");
 			while (rs.next())
 			{
 				agents.add(rs.getString("agentid")+" - "+rs.getString("agtFirstName")+" "+rs.getString("agtLastName"));
@@ -256,5 +256,25 @@ public class AgentDB {
 		return agencies;//the method returns a vector of agency ids
 	}
 				
+	
+	//the method retrieves max agent id from DB
+		public String getMaxAgentId() {
+			
+			String maxAgentId="";
+			
+			try {
+				rs = stmt.executeQuery("SELECT MAX(agentid) FROM agents");
+				while (rs.next())
+				{
+					
+					maxAgentId = rs.getString(1);
+					
+				}
+			} catch (SQLException e) {
+				
+				e.printStackTrace();
+			}
+			return maxAgentId;//the method returns an instance of agent
+		}
 
 }

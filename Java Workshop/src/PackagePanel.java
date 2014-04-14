@@ -52,6 +52,7 @@ public class PackagePanel extends javax.swing.JPanel {
 
 	//variable to connect database(Declared)
 	private Connection conn;
+	private JOptionPane jOptionPane1;
 	private Statement stmt;
 	private ResultSet rs;
 	
@@ -98,6 +99,7 @@ public class PackagePanel extends javax.swing.JPanel {
 				this.add(getTxtPkgAgyCom());
 				this.add(getJList1());
 				this.add(getJTextField1());
+				this.add(getJOptionPane1());
 				lblTitle.setText("View Details for Package:");
 				lblTitle.setBounds(143, 24, 192, 25);
 				lblTitle.setHorizontalAlignment(SwingConstants.RIGHT);
@@ -306,7 +308,7 @@ public class PackagePanel extends javax.swing.JPanel {
 		{
 			btnApkg = new JButton();
 			btnApkg.setText("Add Package");
-			btnApkg.setBounds(155, 358, 155, 35);
+			btnApkg.setBounds(128, 358, 155, 35);
 
 			btnApkg.addMouseListener(new MouseAdapter()
 			{
@@ -326,7 +328,7 @@ public class PackagePanel extends javax.swing.JPanel {
 		{
 			btnMpkg = new JButton();
 			btnMpkg.setText("Modify Package");
-			btnMpkg.setBounds(333, 358, 155, 35);
+			btnMpkg.setBounds(306, 358, 155, 35);
 			
 			btnMpkg.addMouseListener(new MouseAdapter() 
 			{
@@ -358,13 +360,18 @@ public class PackagePanel extends javax.swing.JPanel {
 		{
 			btnDel = new JButton();
 			btnDel.setText("Delete Package");
-			btnDel.setBounds(511, 358, 155, 35);
+			btnDel.setBounds(485, 358, 155, 35);
 			
 			btnDel.addMouseListener(new MouseAdapter()
 			{
 					public void mouseClicked(MouseEvent evt)
 					{
-						deletePackages();
+						int userResponse = jOptionPane1.showConfirmDialog( null, "Do you really want to delete the package? ", "Delete Package",jOptionPane1.OK_CANCEL_OPTION );
+						if (userResponse == jOptionPane1.YES_OPTION)
+						{
+							deletePackages();
+							jOptionPane1.showMessageDialog( null, "Package deleted successfully" );
+						}
 						ComboBoxModel cbProdIDModel = new DefaultComboBoxModel(getPackageIDs());
 						cbPackage.setModel(cbProdIDModel);
 						//clearfields();
@@ -595,6 +602,15 @@ public class PackagePanel extends javax.swing.JPanel {
 			txtPkgEdate.setEditable(false);
 		}
 		return txtPkgEdate;
+	}
+	
+	private JOptionPane getJOptionPane1() {
+		if(jOptionPane1 == null) {
+			jOptionPane1 = new JOptionPane();
+			jOptionPane1.setBounds(9, 11, 675, 387);
+			jOptionPane1.setMessage("");
+		}
+		return jOptionPane1;
 	}
 
 }

@@ -248,15 +248,16 @@ public class AgentAddModify extends javax.swing.JDialog {
 			if (addClicked)
 			{
 				agentDB.insertAgent(newAgent);//call DB class to insert new agent
+				// Update the parent.
+				parent.populateAgent(Integer.parseInt(agentDB.getMaxAgentId()));
 			}
 			else
 			{
 				agentDB.updateAgent(newAgent);//call DB class to update existing agent
+				// Update the parent.
+				parent.populateAgent(newAgent.getAgentId());
 			}
-			//JOptionPane.showMessageDialog(this, "Agent record saved");
-			
-			// Update the parent.
-			parent.populateAgent(newAgent.getAgentId());
+					
 			//dispose current dialog
 			dispose();
 		}
