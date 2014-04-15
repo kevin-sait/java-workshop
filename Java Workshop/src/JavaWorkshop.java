@@ -41,8 +41,6 @@ public class JavaWorkshop extends javax.swing.JFrame {
 		SwingUtilities.invokeLater(new Runnable() {
 			public void run() {
 				JavaWorkshop inst = new JavaWorkshop();
-				AdminLoginPanel adminLoginPanel = new AdminLoginPanel();
-				adminLoginPanel.setVisible(true);
 				inst.setLocationRelativeTo(null);
 				inst.setVisible(true);
 			}
@@ -50,8 +48,7 @@ public class JavaWorkshop extends javax.swing.JFrame {
 	}
 	
 	public JavaWorkshop() {
-		super();
-		
+		super();		
 		initGUI();
 	}
 	
