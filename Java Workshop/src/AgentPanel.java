@@ -3,7 +3,7 @@
  * Team - 5
  * Author:Suparna Roychoudhury
  * Date Created:15th Mar 2014
- * About the file: Implementation of AgentFrame Class which shows details of the selected agent
+ * About the file: Implementation of AgentPanel Class which shows details of the selected agent
  * */
 
 import java.awt.*;
@@ -65,9 +65,7 @@ public class AgentPanel extends javax.swing.JPanel {
 	private JComboBox cmbAgents;
 	
 	private  boolean addClicked = false;
-	private  int agentId;
-	private  int newAgentId;
-
+	
 	AgentDB agentDB = new AgentDB();
 	Agent agent = new Agent();	
 	
@@ -288,7 +286,7 @@ public class AgentPanel extends javax.swing.JPanel {
 	private void btnAddMouseClicked(MouseEvent evt) {
 		
 		addClicked = true;
-		//open instance of AddModifyAgent dialog and set visibility true
+		//open instance of AgentAddModify dialog and set visibility true
 		AgentAddModify addModifyAgent = new AgentAddModify(this,addClicked,agent);
 		addModifyAgent.setVisible(true);
 	}
@@ -297,7 +295,7 @@ public class AgentPanel extends javax.swing.JPanel {
 		
 		addClicked = false;
 		agent.setAgentId(chunkId());//set the agent id to the selected one
-		//open instance of AddModifyAgent dialog and set visibility true
+		//open instance of AgentAddModify dialog and set visibility true
 		AgentAddModify addModifyAgent = new AgentAddModify(this,addClicked,agent);
 		addModifyAgent.setVisible(true);
 	}

@@ -276,5 +276,29 @@ public class AgentDB {
 			}
 			return maxAgentId;//the method returns an instance of agent
 		}
-
+public boolean verifyLogin(String user, String password)
+{
+	try {
+	
+		String DBPassword = "";
+		rs = stmt.executeQuery("SELECT password from ICTOOSD.users WHERE userid='"+user+"'");
+		while (rs.next())
+		{
+			
+			DBPassword = rs.getString(1);
+			
+		}
+		if (DBPassword.equals(password))
+		{
+			return true;
+		}
+		else
+			return false;
+		
+	} catch (SQLException e) {
+		
+		e.printStackTrace();
+		return false;
+	}
+}
 }
