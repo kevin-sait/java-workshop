@@ -1,3 +1,11 @@
+/*
+ * JAVA - Threaded Project
+ * Team - 5
+ * Author: Kevin Colton
+ * Date Created:15th Mar 2014
+ * About the file: Main application window
+ * */
+
 import java.awt.BorderLayout;
 import java.awt.FlowLayout;
 import java.awt.event.MouseAdapter;

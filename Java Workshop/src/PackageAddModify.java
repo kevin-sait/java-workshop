@@ -1,3 +1,11 @@
+/*
+ * JAVA - Threaded Project
+ * Team - 5
+ * Author: Ryuji Sasaki
+ * Date Created:15th Mar 2014
+ * About the file: Implementation of package add-modify window
+ * */
+
 import com.cloudgarden.layout.AnchorLayout;
 /****************************************************
 Application Name: Travel Expert Information System

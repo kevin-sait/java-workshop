@@ -1,3 +1,11 @@
+/*
+ * JAVA - Threaded Project
+ * Team - 5
+ * Author:Suparna Roychoudhury
+ * Date Created:15th Mar 2014
+ * About the file: Implementation of Agent add-modify window
+ * */
+
 import java.awt.FlowLayout;
 /*
  * JAVA - Threaded Project
