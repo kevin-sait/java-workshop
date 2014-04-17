@@ -3,7 +3,8 @@
  * Team - 5
  * Author:Suparna Roychoudhury
  * Date Created:15th Mar 2014
- * About the file: Implementation of AssignCustomer Class which assigns new agent to customer
+ * About the file: Implementation of AgentDeactivate Class which assigns new agent to customer 
+ * when an agent is deactivated
  * */
 
 import java.awt.event.MouseAdapter;

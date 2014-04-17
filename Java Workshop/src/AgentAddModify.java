@@ -3,18 +3,10 @@
  * Team - 5
  * Author:Suparna Roychoudhury
  * Date Created:15th Mar 2014
- * About the file: Implementation of Agent add-modify window
+ * About the file: Implementation of AgentAddModify Class which adds/updates agent data
  * */
 
 import java.awt.FlowLayout;
-/*
- * JAVA - Threaded Project
- * Team - 5
- * Author:Suparna Roychoudhury
- * Date Created:15th Mar 2014
- * About the file: Implementation of AddModifyAgent Class which adds/updates agent data
- * */
-
 import java.awt.event.*;
 import javax.swing.*;
 import javax.swing.border.*;
